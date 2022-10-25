@@ -4,20 +4,37 @@ let content = document.querySelectorAll('.content')[0];
 
 let toggleThemeBtn = document.getElementById('toggle-theme');
 
-let toggleDark = 0;
+let darkMode;
+
+if (darkMode != null) {
+    window.localStorage.setItem('dark', false);
+}
+else {
+    darkMode = JSON.parse(window.localStorage.getItem('dark'));
+    ToggleDarkMode(darkMode);
+}
+
 
 toggleThemeBtn.addEventListener('click', () => {
-    toggleDark = !toggleDark;
-    if (toggleDark) {
+    darkMode = !darkMode;
+    window.localStorage.setItem('dark', darkMode);
+    ToggleDarkMode(darkMode);
+})
+
+
+
+
+function ToggleDarkMode(mode) {  
+    if (darkMode) {
         content.classList.add('dark');
-        document.body.classList.add('dark');
+        document.body.classList.add('dark');        
     }
     else
     {
         content.classList.remove('dark');
         document.body.classList.remove('dark');
     }
-})
+}
 
 
 
