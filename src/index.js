@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         fadeWelcome.classList.add('fadeOut');
         fadeWelcome.classList.remove('fadeIn');
-        fadeWelcome.style = 'visibility: hidden;';
         document.getElementById('bg').style = `filter: saturate(1); 
                                                transition: 250ms ease-in-out`;
         content.style = `transform: translateY(0%); 
@@ -74,6 +73,7 @@ function enablePageInteraction() {
                 console.log("click");
             })
         })
+        fadeWelcome.style = 'display: none;';
         Parallax();
     },
     1000);

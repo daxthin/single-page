@@ -19,9 +19,8 @@ body {
     margin: 0;
     display: flex;
     justify-content: center;
-    height: 100vh;
     background-color: rgb(255, 255, 255);
-
+    width: 100vw;
 }
 
 body::-webkit-scrollbar {
@@ -36,11 +35,12 @@ body::-webkit-scrollbar {
     color: rgb(41, 41, 41);
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 2em 4em;
     box-sizing: border-box;
     font-family: 'Merriweather', serif;
     margin-top: 500px;
-    padding: 3em 35em;
-    height: fit-content;
+    height: 100%;
     transition: 50ms transform ease;
     width: 100%;
     z-index: 10;
@@ -48,11 +48,13 @@ body::-webkit-scrollbar {
 }
 
 .content p {
-    width: 900px;
+    max-width: 900px;
+    
 }
 
 main {
     width: 100%;
+    
 }
 
 [contenteditable] {
@@ -94,6 +96,7 @@ h2 {
     color: rgb(252, 252, 252);
     font-family: Lato;
     font-size: 5em;
+    text-align: center;
 }
 
 .welcome p:nth-child(1) {
@@ -149,14 +152,20 @@ h2 {
 }
 
 #bg {
-    transition: 50ms transform ease;
-    position: fixed;
+    /* transition: 50ms transform ease; */
+    position: absolute;
     z-index: -10;
     width: 100%;
-    background: url('../img/bg.jpg');
     height: 100%;
+    background: url('../img/bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     top: 0;
     background-size: cover;
+}
+
+@media(max-width: 1400px) {
+    .content {
+        padding: 2em 2em;
+    }
 }
