@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+}
+
+body::-webkit-scrollbar {
+    width: 0 !important;
+}
+
+.content {
+    background-color: rgb(255, 255, 255);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(129, 129, 129);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+    margin-top: 500px;
+    padding: 3em 35em;
+    height: fit-content;
+    transition: 50ms transform ease;
+    width: 100%;
+    z-index: 10;
+    transform: translateY(100%);
+}
+
+.content p {
+    width: 900px;
+}
+
+
+[contenteditable] {
+    transition: 250ms ease-in-out;
+}
+
+[contenteditable]:hover {
+    border-left: 1px solid rgb(124, 60, 0);
+    padding: 0 0 0 10px;
+    transition: 250ms ease-in-out;
+}
+
+
+
+[contenteditable]:focus {
+    border-left: 1px solid rgb(124, 60, 0);
+    outline:  0px;
+    padding: 0 0 0 10px;
+    transition: 250ms ease-in-out;
+}
+
+#box {
+    background-color: rgb(26, 26, 26);
+    filter: brightness(0.8);
+    width: 100%;
+    margin-top: 700px;
+    position: absolute;
+    height: 0vh;
+    z-index: -10;
+}
+
+h1,
+h3 {
+    font-family: 'Lato', sans-serif;
+    color: rgb(133, 61, 2);
+}
+
+.welcome p {
+    color: rgb(252, 252, 252);
+    font-family: Lato;
+    font-size: 5em;
+}
+
+.welcome p:nth-child(1) {
+    font-size: 20px;
+    color: rgba(0, 255, 213, 0.596);
+    font-weight: 400;
+}
+
+.welcome p:nth-child(3) {
+    font-size: 20px;
+    color: rgba(0, 255, 213, 0.596);
+    font-weight: 400;
+}
+
+.welcome {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    align-items: center;
+    z-index: 10;
+    transition: 1000ms ease-in-out;
+    background-color: rgba(0,0,0,0);
+}
+
+.fadeOut {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    align-items: center;
+    z-index: 10;
+    opacity: 0;
+    background-color: rgba(0,0,0,0);
+    transition: 1500ms ease-in-out;
+}
+
+.fadeIn {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    align-items: center;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.9);
+    transition: 1500ms ease-in-out;
+}
+
+#bg {
+    transition: 50ms transform ease;
+    position: fixed;
+    z-index: -10;
+    width: 100%;
+    background: url('./img/wp4201271-cusco-wallpapers.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 0;
+    background-size: cover;
+}
