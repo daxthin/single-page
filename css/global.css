@@ -1,9 +1,27 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato/Lato-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../fonts/Merriweather/Merriweather-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 body {
     margin: 0;
     display: flex;
     justify-content: center;
     height: 100vh;
     background-color: rgb(255, 255, 255);
+
 }
 
 body::-webkit-scrollbar {
@@ -15,7 +33,7 @@ body::-webkit-scrollbar {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: rgb(129, 129, 129);
+    color: rgb(41, 41, 41);
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -67,7 +85,7 @@ main {
 }
 
 h1,
-h3 {
+h2 {
     font-family: 'Lato', sans-serif;
     color: rgb(133, 61, 2);
 }
