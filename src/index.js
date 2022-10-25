@@ -1,6 +1,26 @@
 let fadeWelcome = document.querySelectorAll('.welcome')[0];
 let content = document.querySelectorAll('.content')[0];
 
+
+let toggleThemeBtn = document.getElementById('toggle-theme');
+
+let toggleDark = 0;
+
+toggleThemeBtn.addEventListener('click', () => {
+    toggleDark = !toggleDark;
+    if (toggleDark) {
+        content.classList.add('dark');
+        document.body.classList.add('dark');
+    }
+    else
+    {
+        content.classList.remove('dark');
+        document.body.classList.remove('dark');
+    }
+})
+
+
+
 function Parallax() {
     let scroll = 300;
     document.addEventListener('scroll', (e) => {
@@ -54,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function enablePageInteraction() {
     setTimeout(() => {
-        content.style = `transform: translateY(0%); transition: 50ms transform ease;`;
+        content.style = `transform: translateY(0%); transition: 400ms ease;`;
         
         document.getElementById('bg').style = `filter: saturate(1); transition: 50ms ease`;
         
