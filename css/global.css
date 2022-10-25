@@ -49,7 +49,7 @@ body::-webkit-scrollbar {
 
 .content p {
     max-width: 900px;
-    
+    box-sizing: border-box;
 }
 
 main {
@@ -84,6 +84,10 @@ main {
     position: absolute;
     height: 0vh;
     z-index: -10;
+}
+
+h1 {
+    font-size: 3em;
 }
 
 h1,
