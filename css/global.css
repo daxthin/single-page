@@ -300,12 +300,7 @@ h2 {
         font-size: 3em;
         text-align: center;
     }
-    
-    .welcome p:nth-child(1) {
-        font-size: 30px;
-        color: rgba(0, 255, 213, 0.596);
-        font-weight: 400;
-    }
+
     
     .welcome p:nth-child(3) {
         font-size: 30px;
