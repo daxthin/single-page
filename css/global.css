@@ -37,6 +37,7 @@ body::-webkit-scrollbar {
     background-image: url('../img/icon.png');
     background-size: contain;
     width: 40px;
+    user-select: none;
     height: 40px;
     z-index: 10;
 }
@@ -85,12 +86,14 @@ body::-webkit-scrollbar {
     display: grid;
     grid-template-columns: auto 300px;
     grid-template-rows: 100px auto;
+    user-select: none;
 }
 
 .content article:nth-child(1) p {
     display: inline-block;
     grid-row: 2;
     grid-column: 1;
+    user-select: none;
 }
 
 
@@ -101,6 +104,7 @@ body::-webkit-scrollbar {
     grid-row: 2;
     margin: 1em;
     box-sizing: border-box;
+    user-select: none;
 }
 
 main {

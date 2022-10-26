@@ -5,6 +5,7 @@ let content = document.querySelectorAll('.content')[0];
 let toggleThemeBtn = document.getElementById('toggle-theme');
 
 let darkMode;
+let limitForIconFade = 200;
 
 if (darkMode != null) {
     window.localStorage.setItem('dark', false);
@@ -31,6 +32,17 @@ function ToggleDarkMode(mode) {
         document.body.classList.remove('dark');
     }
 }
+
+document.addEventListener('scroll', (e) => {
+        // get scroll value
+        let top = document.documentElement.scrollTop;
+        toggleThemeBtn.style.opacity = `${Remap(limitForIconFade, 0, 200, 1, 0)}`;
+});
+
+
+
+
+
 // *TOGGLE DARK MODE <
 
 
