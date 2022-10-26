@@ -34,6 +34,10 @@ body::-webkit-scrollbar {
     transition: 250ms opacity ease-in-out;
     user-select: none;
     box-sizing: border-box;
+    background-image: url('../img/icon.png');
+    background-size: contain;
+    width: 40px;
+    height: 40px;
     z-index: 10;
 }
 
