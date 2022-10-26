@@ -1,7 +1,7 @@
 let fadeWelcome = document.querySelectorAll('.welcome')[0];
 let content = document.querySelectorAll('.content')[0];
 
-
+// !TOGGLE DARK MODE >
 let toggleThemeBtn = document.getElementById('toggle-theme');
 
 let darkMode;
@@ -14,15 +14,11 @@ else {
     ToggleDarkMode(darkMode);
 }
 
-
 toggleThemeBtn.addEventListener('click', () => {
     darkMode = !darkMode;
     window.localStorage.setItem('dark', darkMode);
     ToggleDarkMode(darkMode);
 })
-
-
-
 
 function ToggleDarkMode(mode) {  
     if (darkMode) {
@@ -35,9 +31,38 @@ function ToggleDarkMode(mode) {
         document.body.classList.remove('dark');
     }
 }
+// *TOGGLE DARK MODE <
 
 
 
+// !FADE IN OUT WELCOME TEXT >
+function FadeInOut(aT, bT) {
+    let delayIn = aT;
+    let delayOut = bT;
+
+  
+    document.querySelectorAll('.fade-element').forEach((e) => {
+
+        delayIn *= 2;
+        delayOut *= 2;
+
+        setTimeout(() => {
+            e.classList.add('elementFadeIn');
+        }, delayIn);
+        setTimeout(() => {
+            e.classList.add('elementFadeOut');
+        }, delayOut);
+
+
+    })
+
+    return delayOut;
+}
+// *FADE IN OUT WELCOME TEXT <
+
+// 
+
+// !CONTENT PARALLAX >
 function Parallax() {
     let scroll = 300;
     document.addEventListener('scroll', (e) => {
@@ -57,14 +82,16 @@ function Parallax() {
         });
     });
 }
+// *CONTENT PARALLAX <
 
 
-// *welcome anim function
+
+// !WELCOME ANIM FUNCTION >
 document.addEventListener('DOMContentLoaded', () => {
 
     // !set start delay for fade in to avoid load first
     setTimeout(() => {
-        fadeWelcome.classList.add('fadeIn');
+        fadeWelcome.classList.add('welcomeFadeIn');
         document.body.style = 'overflow: hidden;';
         document.getElementById('bg').style = `filter: saturate(0); transition: 250ms ease-in-out`;
     },
@@ -72,8 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // *set delay for fade out after 2500
     setTimeout(() => {
-        fadeWelcome.classList.add('fadeOut');
-        fadeWelcome.classList.remove('fadeIn');
+        fadeWelcome.classList.add('welcomeFadeOut');
+        fadeWelcome.classList.remove('welcomeFadeIn');
         document.getElementById('bg').style = `filter: saturate(1); transition: 250ms ease-in-out`;
         
         content.style = `transform: translateY(0%); 
@@ -81,11 +108,15 @@ document.addEventListener('DOMContentLoaded', () => {
                          transform ease-in-out;`;
         enablePageInteraction();
     },
-    2500);
+    FadeInOut(500, 800));
 
 }, false);
+// *WELCOME ANIM FUNCTION <
 
 
+
+
+// !ENABLE PAGE FUNCTIONS >
 /**
  * *Allow user to interact after welcome test
  */
@@ -107,8 +138,13 @@ function enablePageInteraction() {
     },
     1000);
 }
+// *ENABLE PAGE FUNCTIONS <
 
 
+
+
+
+// !OTHER FUNCTIONS FOR UTILITY >
 /**
  * *Replace low and high values from an input
  * 
@@ -129,3 +165,14 @@ function Remap(value, low1, high1, low2, high2) {
                   (high1 - low1);
 }
 
+function easeInOut(t) {
+    if (t < 0.5) {
+        return 2.0 * t * t;
+    }
+    else
+    {
+        t -= 0.5;
+        return 2.0 * t * (1.0 - t) + 0.5;
+    }
+}
+// *OTHER FUNCTIONS FOR UTILITY <
