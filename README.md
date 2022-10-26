@@ -6,4 +6,9 @@
 3. Dark and Light theme switch
 4. Basic elements animation
 
-![example](/assets/capture.png)
+### LIGHT
+![example](/assets/capture-light.png)
+
+
+### DARK
+![example](/assets/capture-dark.png)
