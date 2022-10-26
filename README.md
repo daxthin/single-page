@@ -13,3 +13,6 @@
 
 ### DARK
 ![example](/assets/dark.png)
+
+
+**DISCLAIMER: THE IMAGES USED IN THE PAGE ARE NOT MINE!**
