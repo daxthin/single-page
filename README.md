@@ -5,10 +5,11 @@
 2. Element Fade Effects
 3. Dark and Light theme switch
 4. Basic elements animation
+5. Basic responsive design
 
 ### LIGHT
-![example](/assets/capture-light.png)
+![example](/assets/light.png)
 
 
 ### DARK
-![example](/assets/capture-dark.png)
+![example](/assets/dark.png)
