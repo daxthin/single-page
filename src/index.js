@@ -99,6 +99,33 @@ function Parallax() {
 
 
 
+
+document.addEventListener('scroll', (e) => {
+    document.querySelectorAll('.parallax-item').forEach((item) => {
+        document.querySelectorAll('img').forEach((e) => {
+            let top = document.documentElement.scrollTop;
+            let viewportHeight = window.innerHeight;
+            let y = e.getBoundingClientRect().top;
+
+   
+
+            if( y > viewportHeight/5.5 && y < viewportHeight/1.5 ){
+                e.style.filter = 'saturate(1)';
+                e.style.transition = '500ms ease-in-out';
+    
+            }  
+            else {
+                e.style.filter = 'saturate(0)';
+                e.style.transition = '500ms ease-in-out';
+
+            }
+
+        })
+    })
+});
+    
+    
+    
 // !WELCOME ANIM FUNCTION >
 document.addEventListener('DOMContentLoaded', () => {
 
