@@ -36,7 +36,8 @@ function ToggleDarkMode(mode) {
 document.addEventListener('scroll', (e) => {
         // get scroll value
         let top = document.documentElement.scrollTop;
-        toggleThemeBtn.style.opacity = `${Remap(limitForIconFade, 0, 200, 1, 0)}`;
+    
+        toggleThemeBtn.style.opacity = `${Remap(top, 0, limitForIconFade, 1, 0)}`;
 });
 
 
