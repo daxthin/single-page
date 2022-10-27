@@ -2,14 +2,14 @@
 const fadeWelcome = document.querySelectorAll('.welcome')[0];
 const content = document.querySelectorAll('.content')[0];
 const toggleThemeBtn = document.getElementById('toggle-theme');
-let darkMode;
-const limitForIconFade = 300;
 const images = document.querySelectorAll('img');
+const limitForIconFade = 300;
+let darkMode;
 
+// scroll to top after refresh
 setTimeout(() => {
     window.scrollTo(0, 0);
 }, 100);
-
 
 // !TOGGLE DARK MODE >
 if (darkMode != null) {
@@ -20,10 +20,24 @@ else {
     ToggleDarkMode(darkMode);
 }
 
+let scrollTopPosition = 0;
+
+function fadeDarkModeBtn() {
+    scrollTopPosition = document.documentElement.scrollTop;
+    if (scrollTopPosition <= 300) {
+        toggleThemeBtn.style.visibility = 'visible';
+    }
+    else {
+        toggleThemeBtn.style.visibility = 'hidden';
+    }  
+}
+
 toggleThemeBtn.addEventListener('click', () => {
     darkMode = !darkMode;
     window.localStorage.setItem('dark', darkMode);
-    ToggleDarkMode(darkMode);
+    if (scrollTopPosition <= 300) {
+        ToggleDarkMode(darkMode);       
+    }
 })
 
 function ToggleDarkMode(mode) {  
@@ -38,10 +52,6 @@ function ToggleDarkMode(mode) {
     }
 }
 
-function fadeDarkModeBtn() {
-    let top = document.documentElement.scrollTop;
-    toggleThemeBtn.style.opacity = `${Remap(top, 0, limitForIconFade, 1, 0)}`;
-}
 
 // !SECTION HIGHLIGHT >
 // *FIXED DETECTION RANGE
@@ -74,27 +84,6 @@ function highlightElements() {
 
 
 document.addEventListener('scroll', (e) => {
-    requestAnimationFrame(fadeDarkModeBtn);
     requestAnimationFrame(highlightElements);
+    requestAnimationFrame(fadeDarkModeBtn);
 });
-
-// !OTHER FUNCTIONS FOR UTILITY >
-/**
- * *Replace low and high values from an input
- * 
- * *Example: Remap(input, 0, 4, 4, 0);
- * 
- * *this will return the values inverted
- * *if you have a range between 0 and 4 you will get 4 and 0
- * @param {float} value [initial value]
- * @param {float} low1  [lowest value in the input]
- * @param {float} high1 [highest value in the input]
- * @param {float} low2 [Remap the lowest value of the input]
- * @param {float} high2 [Remap the highest value of the input]
- * @returns [Remapped value]
- */
-function Remap(value, low1, high1, low2, high2) {
-    return low2 + (high2 - low2) *
-                  (value - low1) /
-                  (high1 - low1);
-}

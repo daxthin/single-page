@@ -15,6 +15,26 @@
     font-display: swap;
 }
 
+:root {
+    /* light mode */
+    --heading-color: rgb(41, 41, 41);
+    --para-color: color: rgb(0, 0, 0);
+    --fg-color: rgb(231, 135, 57);
+    --para-font: 'Merriweather', serif;
+    --heading-font: 'Lato', sans-serif;
+    --bg-color: #222;
+    --second-color: rgb(231, 135, 57);
+    --third-color: #fff;
+
+    /* dark mode */
+    --heading-dark-color: rgb(235, 102, 49);
+    --para-dark-color: rgb(255, 225, 190);
+    --fg-dark-color: #111;
+    --bg-dark-color: #222;
+    --second-dark-color: #fff;
+    --third-dark-color: #fff;
+}
+
 body {
     margin: 0;
     display: flex;
@@ -70,7 +90,7 @@ h2 {
 #footer {
     width: 100%;
     height: 5%;
-    background-color: rgb(231, 135, 57);
+    background-color: var(--second-color);
     display: inline-block;
 }
 
@@ -80,9 +100,10 @@ h2 {
     box-sizing: border-box;
     height: 40px;
     margin: 2em;
-    opacity: 0.6;
+    opacity: .85;
     position: fixed;
     transition: 250ms opacity ease-in-out;
+    filter: invert(1);
     user-select: none;
     user-select: none;
     width: 40px;
@@ -97,40 +118,26 @@ h2 {
 }
 
 .content {
-    background-color: rgb(231, 135, 57);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: var(--fg-color);
     align-items: center;
-    color: rgb(41, 41, 41);
-    font-family: 'Merriweather', serif;
+    font-family: var(--para-font);
     height: fit-content;
     margin-top: 600px;
     padding-top: 4em;
-    transition: 50ms transform ease;
+    transition: 250ms ease-in-out;
     width: 100%;
     z-index: 10;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     gap: 6em;
-    animation: slideUpContent 800ms ease-in-out;
-}
-
-@keyframes slideUpContent {
-    from {
-        transform: translateY(100%);
-    }
-    to {
-        transform: translateY(0%);
-    }
 }
 
 .content p {
     box-sizing: border-box;
     font-size: 16px;
     line-height: 1.5;
-    color: rgb(0, 0, 0);
+    color: var(--para-color);
 }
 
 .content .column {
@@ -147,7 +154,7 @@ h2 {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: -10;
@@ -155,31 +162,27 @@ h2 {
 
 /* dark mode  */
 .dark {
-    background-color: #111;
+    background-color: var(--fg-dark-color);
 }
 
 .dark p {
-    color: rgb(255, 225, 190);
+    color: var(--para-dark-color);
 }
 
 .dark h2 {
-    color: rgb(235, 102, 49);
+    color: var(--heading-dark-color);
 }
 
 .dark h1 {
-    color: rgb(235, 102, 49);
+    color: var(--heading-dark-color);
 }
 
 .dark body {
-    background-color: #222;
+    background-color: var(--fg-dark-color);
 }
 
 .dark img {
     box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
-}
-
-.dark #introduction {
-    background-color: rgba(44, 44, 44, 0);
 }
 
 @media (max-width: 700px) {
