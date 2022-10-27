@@ -8,7 +8,7 @@
         <title>Single Page</title>
 
         <!--- avoid page to focus back to top on refresh -->
-        <meta http-equiv="refresh" />
+        <!-- <meta http-equiv="refresh" /> -->
         <!-- styles -->
         <link rel="stylesheet" href="./css/global.css" />
     </head>
@@ -17,50 +17,60 @@
 
             <div id="toggle-theme"></div>
             <!-- welcome msg -->
-            <div class="welcome">
+            <!-- <div class="welcome">
                 <p class="fade-element" data-speed="250">HI</p>
-                <p class="fade-element">You can edit the content by clicking over texts, :)</p>
-            </div>
+                <p class="fade-element">You can edit the content by clicking over texts <br><br> :)</p>
+            </div> -->
             <!-- background -->
             <div class="parallax-item" data-speed="1" id="bg"></div>
 
             <!-- content -->
-            <div tabindex="0" class="parallax-item content" data-speed="5">
-                <article>
-                    <h1>Cuzco</h1>
-                    <p contenteditable="">
-                        Cusco también conocida como Cuzco o Qosqo, capital arqueológica de América, fue la ciudad principal del Imperio Inca, considerada por los mismos como “Ombligo del mundo”. Era el centro vital del milenario Tahuantinsuyo (Imperio de los Incas) y en la actualidad es la ciudad más visitada del Perú por ofrecer gran riqueza arquitectónica y espiritual.
-                        <br>
-                        <br>
-                        Cusco es un departamento del Perú situado en la parte suroriental del país. Ocupa un territorio de más de 71,9 mil kilómetros cuadrados que comprende territorios mayormente montañosos, los más bajos cubiertos por la selva amazónica.
-                        <br>
-                        <br>
-                        Declarada Patrimonio de la Humanidad en 1983 por la Unesco, suele ser denominada, debido a la gran cantidad de monumentos que posee, como la «Roma de América». Cuenta con una población estimada de 358,052 según el censo peruano de 2007, lo que la ubica entre las ciudades más pobladas del país.
-                    </p>
+            <div tabindex="0" class="content parallax-item" data-speed="5">
+                <article id="introduction">
+                    <div class="column">
+                        <h1>Cuzco</h1>
+                        <p>
+                            Cusco también conocida como Cuzco o Qosqo, capital arqueológica de América, fue la ciudad principal del Imperio Inca, considerada por los mismos como “Ombligo del mundo”. Era el centro vital del milenario Tahuantinsuyo (Imperio de los Incas) y en la actualidad es la ciudad más visitada del Perú por ofrecer gran riqueza arquitectónica y espiritual.
+                        </p>
+                        <p>
+                            Cusco es un departamento del Perú situado en la parte suroriental del país. Ocupa un territorio de más de 71,9 mil kilómetros cuadrados que comprende territorios mayormente montañosos, los más bajos cubiertos por la selva amazónica.
+                        </p>
+                        <p>
+                            Declarada Patrimonio de la Humanidad en 1983 por la Unesco, suele ser denominada, debido a la gran cantidad de monumentos que posee, como la «Roma de América». Cuenta con una población estimada de 358,052 según el censo peruano de 2007, lo que la ubica entre las ciudades más pobladas del país.
+                        </p>
+                    </div>
                     <img src="./img/bg-5.webp" alt="">
                 </article>
-                <br>
-
                 <article>
-                    <h2>Geografía</h2>
-                    <p>
-                        Cusco se expande por el valle que forma el río Huatanay y por los cerros aledaños. Su clima es generalmente seco y templado. Tiene dos estaciones definidas: una seca entre abril y octubre, con días soleados, noches frías con heladas y temperatura promedio de 13°C; y otra lluviosa, de noviembre a marzo, temperatura promedio 12 °C. En los días soleados la temperatura alcanza los 20 °C, aunque el ligero viento de la montaña es habitualmente frío.
-                    </p>
                     <img src="./img/bg-4.webp" alt="">
-                    <br>
-                    <br>
-                    <h2>Clima</h2>
-                    <p>
-                        Cusco se halla bajo la influencia macro-climática de grandes masas de aire provenientes de la selva sur oriental, como también los vientos del Altiplano Peruano-Boliviano que son más bien fríos y secos, al igual que los que provienen de la Patagonia, ingresando por la zona sur oriental y que por lo general suponen eventos climáticos de mayor escala. Por otro lado, los vientos locales que se generan en sus valles y en sus llanuras tienen la función de distribuir calor y humedad a lo largo del día. La temperatura promedio anual fluctúa entre los 10.3°C y los 13°C (entre 50.54° y 52.34° Fahrenheit); pero estas temperaturas varían de acuerdo a la zona.
-                    </p>
-                    <br>
-                    <img src="./img/bg-2.webp" alt="">
-                    <h2>Festividades</h2>
-                    <p>
-                        El cuzqueño y en general el peruano, es un pueblo festivo por excelencia que ha convertido las celebraciones religiosas en verdaderas fiestas populares donde son tan importantes las ceremonias y los cultos como: los bailes, las comidas, y las bebidas. Por ejemplo hay comidas típicas que se preparan solo para determinadas fiestas y otro tanto ocurre con los bailes. La fiesta más importante en la festividad cuzqueña es la Semana Santa, con sus procesiones de lunes Santo y viernes Santo. A estas fiestas hay que sumar dos que se realizan en lugares un tanto alejados del Cusco, La Virgen del Carmen en Paucartambo y Qoylloritti, cercana al pueblo de Ocongate. Ambas igualan en originalidad y belleza a las fiestas de la ciudad.
-                    </p>
-                    <img src="./img/bg-8.webp" alt="">
+                    <div class="column">
+                        <h2>Geografía</h2>
+                        <p>
+                            Cusco se expande por el valle que forma el río Huatanay y por los cerros aledaños. Su clima es generalmente seco y templado. Tiene dos estaciones definidas: una seca entre abril y octubre, con días soleados, noches frías con heladas y temperatura promedio de 13°C; y otra lluviosa, de noviembre a marzo, temperatura promedio 12 °C. En los días soleados la temperatura alcanza los 20 °C, aunque el ligero viento de la montaña es habitualmente frío.
+                        </p>
+                    </div>
                 </article>
+                <article>
+                    <div class="column">
+                        <h2>Clima</h2>
+                        <p>
+                            Cusco se halla bajo la influencia macro-climática de grandes masas de aire provenientes de la selva sur oriental, como también los vientos del Altiplano Peruano-Boliviano que son más bien fríos y secos, al igual que los que provienen de la Patagonia, ingresando por la zona sur oriental y que por lo general suponen eventos climáticos de mayor escala. Por otro lado, los vientos locales que se generan en sus valles y en sus llanuras tienen la función de distribuir calor y humedad a lo largo del día. La temperatura promedio anual fluctúa entre los 10.3°C y los 13°C (entre 50.54° y 52.34° Fahrenheit); pero estas temperaturas varían de acuerdo a la zona.
+                        </p>
+                    </div>
+                    <img src="./img/bg-2.webp" alt="">
+                </article>
+                <article>
+                    <img src="./img/bg-8.webp" alt="">
+                    <div class="column">
+                        <h2>Festividades</h2>
+                        <p>
+                            El cuzqueño y en general el peruano, es un pueblo festivo por excelencia que ha convertido las celebraciones religiosas en verdaderas fiestas populares donde son tan importantes las ceremonias y los cultos como: los bailes, las comidas, y las bebidas. Por ejemplo hay comidas típicas que se preparan solo para determinadas fiestas y otro tanto ocurre con los bailes. La fiesta más importante en la festividad cuzqueña es la Semana Santa, con sus procesiones de lunes Santo y viernes Santo. A estas fiestas hay que sumar dos que se realizan en lugares un tanto alejados del Cusco, La Virgen del Carmen en Paucartambo y Qoylloritti, cercana al pueblo de Ocongate. Ambas igualan en originalidad y belleza a las fiestas de la ciudad.
+                        </p>
+                    </div>
+                </article>
+            </div>
+            <div id="footer">
+
             </div>
         </main>
         <script src="./src/index.js"></script>
