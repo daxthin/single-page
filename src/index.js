@@ -1,8 +1,8 @@
 
 const fadeWelcome = document.querySelectorAll('.welcome')[0];
 const content = document.querySelectorAll('.content')[0];
-const toggleThemeBtn = document.getElementById('toggle-theme');
-const images = document.querySelectorAll('img');
+const toggleThemeBtn = document.getElementsByClassName('toggle-theme')[0];
+const images = document.querySelectorAll('.image-wrapper');
 const limitForIconFade = 300;
 let darkMode;
 
@@ -70,14 +70,10 @@ function highlightElements() {
         let center = top + bottom / 2;
         //set a range between 20 and 100 % of the viewport 
         if( center > viewportHeight*0.2 && center < viewportHeight){
-            e.style.filter = 'saturate(1)';
-            e.style.maxWidth = '500px';
-            e.style.transition = '500ms ease-in-out';
+            e.classList.remove('img-overlay');
         }  
         else {
-            e.style.filter = 'saturate(0)';
-            e.style.maxWidth = '400px';
-            e.style.transition = '500ms ease-in-out';
+            e.classList.add('img-overlay');
         }   
     })
 }
